@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "module": "none",
+        "types": ["types-for-adobe/photoshop/2015.5"],
+        "strict": true,
+        "noImplicitAny": true,
+        "noLib": true
+    }, 
+    "exclude": [
+        "node_modules"
+    ]
+}
