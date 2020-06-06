@@ -31,11 +31,17 @@ const arrayRemove = <T extends unknown>(arr: T[], val: T) => {
      }
 }
 
-const spliceLayers = () => {
-    for (let i = 0; i < document.layers.length; i++) {
+const spliceLayers = (start: number) => {
+    let wrap = true
+    for (let i = document.layers.length - start; i > 0; i--) {
         const layer = document.layers[i]
         if (layer.visible) {
             arrayRemove(unusedLayers, layer)
+            break
+        }
+        if (i === 1) {
+            if (wrap) i = document.layers.length - 1
+            wrap = false
         }
     }
 }
@@ -98,7 +104,7 @@ let frameIndex = 1
 while (true) {
     try {
         selectAFrame(frameIndex)
-        spliceLayers()
+        spliceLayers(frameIndex)
         frameIndex++
     } catch {
         break

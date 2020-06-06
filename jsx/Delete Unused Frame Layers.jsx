@@ -27,11 +27,18 @@ var arrayRemove = function (arr, val) {
         }
     }
 };
-var spliceLayers = function () {
-    for (var i_2 = 0; i_2 < document.layers.length; i_2++) {
+var spliceLayers = function (start) {
+    var wrap = true;
+    for (var i_2 = document.layers.length - start; i_2 > 0; i_2--) {
         var layer = document.layers[i_2];
         if (layer.visible) {
             arrayRemove(unusedLayers, layer);
+            break;
+        }
+        if (i_2 === 1) {
+            if (wrap)
+                i_2 = document.layers.length - 1;
+            wrap = false;
         }
     }
 };
@@ -90,7 +97,7 @@ var frameIndex = 1;
 while (true) {
     try {
         selectAFrame(frameIndex);
-        spliceLayers();
+        spliceLayers(frameIndex);
         frameIndex++;
     }
     catch (_a) {
