@@ -1,11 +1,13 @@
 {
     "compilerOptions": {
-        "outDir": "dist",
+        "outDir": "jsx",
         "module": "none",
         "types": ["types-for-adobe/photoshop/2015.5"],
         "strict": true,
+        "checkJs": false,
         "noImplicitAny": true,
-        "noLib": true
+        "noLib": true,
+        "jsx": "preserve"
     }, 
     "exclude": [
         "node_modules"

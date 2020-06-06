@@ -1,3 +1,4 @@
+"use strict";
 var originalUnit = app.preferences.rulerUnits;
 app.preferences.rulerUnits = Units.INCHES;
 var docRef = app.documents.add(2, 4);
