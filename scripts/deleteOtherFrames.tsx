@@ -1,8 +1,6 @@
-const document = app.activeDocument
-let animationFrame = app.stringIDToTypeID("animationFrameClass")
-let nullID = app.charIDToTypeID("null")
-
 const selectFrame = (index: number) => {
+    const animationFrame = app.stringIDToTypeID("animationFrameClass")
+    const nullID = app.charIDToTypeID("null")
     const select = app.charIDToTypeID("slct")
     const desc = new ActionDescriptor()
     const ref = new ActionReference()
@@ -12,6 +10,8 @@ const selectFrame = (index: number) => {
 }
 
 const deleteFrame = () => {
+    const animationFrame = app.stringIDToTypeID("animationFrameClass")
+    const nullID = app.charIDToTypeID("null")
     const deletetion = app.charIDToTypeID("Dlt ")
     const desc = new ActionDescriptor()
     const ref = new ActionReference()

@@ -1,8 +1,7 @@
 "use strict";
-var document = app.activeDocument;
-var animationFrame = app.stringIDToTypeID("animationFrameClass");
-var nullID = app.charIDToTypeID("null");
 var selectFrame = function (index) {
+    var animationFrame = app.stringIDToTypeID("animationFrameClass");
+    var nullID = app.charIDToTypeID("null");
     var select = app.charIDToTypeID("slct");
     var desc = new ActionDescriptor();
     var ref = new ActionReference();
@@ -11,6 +10,8 @@ var selectFrame = function (index) {
     app.executeAction(select, desc, DialogModes.NO);
 };
 var deleteFrame = function () {
+    var animationFrame = app.stringIDToTypeID("animationFrameClass");
+    var nullID = app.charIDToTypeID("null");
     var deletetion = app.charIDToTypeID("Dlt ");
     var desc = new ActionDescriptor();
     var ref = new ActionReference();
