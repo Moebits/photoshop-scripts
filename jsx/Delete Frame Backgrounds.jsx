@@ -31,24 +31,6 @@ var magicWandTool = function (x, y) {
     desc2.putBoolean(idAntA, true);
     app.executeAction(idAddT, desc2, DialogModes.NO);
 };
-var setPropogate = function (value) {
-    var idsetd = app.charIDToTypeID("setd");
-    var desc223 = new ActionDescriptor();
-    var idnull = app.charIDToTypeID("null");
-    var ref54 = new ActionReference();
-    var idLyr = app.charIDToTypeID("Lyr ");
-    var idOrdn = app.charIDToTypeID("Ordn");
-    var idTrgt = app.charIDToTypeID("Trgt");
-    ref54.putEnumerated(idLyr, idOrdn, idTrgt);
-    desc223.putReference(idnull, ref54);
-    var idT = app.charIDToTypeID("T   ");
-    var desc224 = new ActionDescriptor();
-    var idanimationPropagate = app.stringIDToTypeID("animationPropagate");
-    desc224.putBoolean(idanimationPropagate, value);
-    idLyr = app.charIDToTypeID("Lyr ");
-    desc223.putObject(idT, idLyr, desc224);
-    app.executeAction(idsetd, desc223, DialogModes.NO);
-};
 var removeBackground = function () {
     var document = app.activeDocument;
     if (document.activeLayer.isBackgroundLayer)
